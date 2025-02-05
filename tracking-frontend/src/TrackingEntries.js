@@ -127,70 +127,72 @@ function TrackingEntries() {
             <h1>Submit Entries Here</h1>
 
             {/* Submission Form */}
-            <form
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    addEntryToQueue();
-                }}
-                style={{ marginBottom: "20px" }}
-            >
-                <input
-                    type="date"
-                    name="date"
-                    value={formData.date}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="text"
-                    name="store"
-                    value={formData.store}
-                    onChange={handleChange}
-                    placeholder="Store"
-                    required
-                />
-                <input
-                    type="text"
-                    name="time_of_day"
-                    value={formData.time_of_day}
-                    onChange={handleChange}
-                    placeholder="Time of Day"
-                    required
-                />
-                <input
-                    type="number"
-                    step="0.01"
-                    name="money_earned"
-                    value={formData.money_earned}
-                    onChange={handleChange}
-                    placeholder="Money Earned"
-                    required
-                />
-                <input
-                    type="number"
-                    step="0.01"
-                    name="mileage"
-                    value={formData.mileage}
-                    onChange={handleChange}
-                    placeholder="Mileage"
-                    required
-                />
-                <input
-                    type="text"
-                    name="comments"
-                    value={formData.comments}
-                    onChange={handleChange}
-                    placeholder="Comments"
-                />
-                <button type="submit">Add Entry to Queue</button>
-                <button
-                    type="button"
-                    onClick={handleSubmitGroupedEntries}
-                    style={{ marginLeft: "10px" }}
-                >
-                    Submit All Entries
-                </button>
-            </form>
+      {/* Submission Form */}
+<form
+    onSubmit={(e) => {
+        e.preventDefault();
+        addEntryToQueue();
+    }}
+    style={{ marginBottom: "20px" }}
+>
+    <input
+        type="text"
+        name="store"
+        value={formData.store}
+        onChange={handleChange}
+        placeholder="Store"
+        required
+    />
+    <input
+        type="number"
+        step="0.01"
+        name="money_earned"
+        value={formData.money_earned}
+        onChange={handleChange}
+        placeholder="Money Earned"
+        required
+    />
+    <input
+        type="text"
+        name="time_of_day"
+        value={formData.time_of_day}
+        onChange={handleChange}
+        placeholder="Time of Day"
+        required
+    />
+    <input
+        type="number"
+        step="0.01"
+        name="mileage"
+        value={formData.mileage}
+        onChange={handleChange}
+        placeholder="Mileage"
+        required
+    />
+    <input
+        type="date"
+        name="date"
+        value={formData.date}
+        onChange={handleChange}
+        required
+    />
+    <input
+        type="text"
+        name="comments"
+        value={formData.comments}
+        onChange={handleChange}
+        placeholder="Comments"
+    />
+    <button type="submit">Add Entry to Queue</button>
+    <button
+        type="button"
+        onClick={handleSubmitGroupedEntries}
+        style={{ marginLeft: "10px" }}
+    >
+        Submit All Entries
+    </button>
+</form>
+
 
             {/* Display Queued Entries */}
             {groupedEntries.length > 0 && (
